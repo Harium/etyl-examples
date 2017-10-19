@@ -3,6 +3,7 @@ package examples.etyl.interpolation;
 import java.awt.Color;
 
 import com.harium.etyl.core.animation.Animation;
+import com.harium.etyl.core.animation.script.HorizontalAnimation;
 import com.harium.etyl.core.animation.script.HorizontalMovementScript;
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.core.graphics.Graphics;
@@ -19,17 +20,17 @@ public class InterpolationApplication extends Application {
 		super(w, h);
 	}
 	
-	HorizontalMovementScript rightLinearScript;
-	HorizontalMovementScript leftLinearScript;
-	
-	HorizontalMovementScript rightQuadraticScript;
-	HorizontalMovementScript leftQuadraticScript;
-	
-	HorizontalMovementScript rightRadialScript;
-	HorizontalMovementScript leftRadialScript;
-	
-	HorizontalMovementScript rightReverseQuadraticScript;
-	HorizontalMovementScript leftReverseQuadraticScript;
+	HorizontalAnimation rightLinearScript;
+	HorizontalAnimation leftLinearScript;
+
+	HorizontalAnimation rightQuadraticScript;
+	HorizontalAnimation leftQuadraticScript;
+
+	HorizontalAnimation rightRadialScript;
+	HorizontalAnimation leftRadialScript;
+
+	HorizontalAnimation rightReverseQuadraticScript;
+	HorizontalAnimation leftReverseQuadraticScript;
 		
 	private Layer linearBall;
 	private Layer quadraticBall;
@@ -80,15 +81,15 @@ public class InterpolationApplication extends Application {
 		loading = 100;
 	}
 
-	protected HorizontalMovementScript createRightScript(Layer target, Interpolator interpolator) {
-		HorizontalMovementScript rightScript = new HorizontalMovementScript(target, 3000);
+	protected HorizontalAnimation createRightScript(Layer target, Interpolator interpolator) {
+		HorizontalAnimation rightScript = new HorizontalAnimation(target, 3000);
 		rightScript.setInterval(40, 640);
 		rightScript.setInterpolator(interpolator);
 		return rightScript;
 	}
 
-	protected HorizontalMovementScript createLeftScript(Layer target, Interpolator interpolator) {
-		HorizontalMovementScript leftScript = new HorizontalMovementScript(target, 3000);
+	protected HorizontalAnimation createLeftScript(Layer target, Interpolator interpolator) {
+		HorizontalAnimation leftScript = new HorizontalAnimation(target, 3000);
 		leftScript.setInterval(640, 40);
 		leftScript.setInterpolator(interpolator);
 		return leftScript;
