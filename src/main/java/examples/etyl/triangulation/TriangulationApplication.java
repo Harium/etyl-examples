@@ -1,6 +1,5 @@
 package examples.etyl.triangulation;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +8,9 @@ import com.badlogic.gdx.math.Vector2;
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.commons.event.MouseEvent;
 import com.harium.etyl.commons.event.PointerEvent;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
-import com.harium.etyl.linear.Triangle2;
+import com.harium.etyl.geometry.Triangle2;
 import com.harium.etyl.util.triangulation.KongTriangulation;
 
 public class TriangulationApplication extends Application {

@@ -1,9 +1,9 @@
 package examples.etyl.customloading.application;
 
-import java.awt.Color;
 import java.awt.Font;
 
 import com.harium.etyl.commons.context.load.GenericLoadApplication;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.ui.theme.Theme;
 import com.harium.etyl.ui.theme.ThemeManager;

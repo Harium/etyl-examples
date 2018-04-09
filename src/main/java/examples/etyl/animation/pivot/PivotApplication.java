@@ -1,14 +1,14 @@
 package examples.etyl.animation.pivot;
 
-import java.awt.Color;
 import java.util.Set;
 
 import com.harium.etyl.animation.pivot.Part;
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.commons.event.KeyEvent;
 import com.harium.etyl.commons.event.PointerEvent;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
-import com.harium.etyl.linear.Point2D;
+import com.harium.etyl.geometry.Point2D;
 
 public class PivotApplication extends Application {
 

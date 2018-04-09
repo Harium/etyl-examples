@@ -13,7 +13,7 @@ public class HelloWorld extends Etyl {
 
     public static void main(String[] args) {
         HelloWorld app = new HelloWorld();
-        app.setTitle("Hello World Example");
+        app.setTitle("Hello World");
         app.setIcon("particle.png");
         app.init();
     }

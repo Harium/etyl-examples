@@ -1,4 +1,4 @@
-package examples.linear.ellipse.application;
+package examples.geometry.ellipse.application;
 
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.core.graphics.Graphics;

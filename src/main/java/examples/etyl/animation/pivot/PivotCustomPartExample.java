@@ -1,9 +1,8 @@
 package examples.etyl.animation.pivot;
 
-import java.awt.Color;
-
 import com.harium.etyl.animation.pivot.Part;
 import com.harium.etyl.commons.context.Application;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
 
 public class PivotCustomPartExample extends Application {

@@ -1,9 +1,8 @@
 package examples.etyl.basic.hello;
 
 import com.harium.etyl.commons.context.Application;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
-
-import java.awt.*;
 
 public class HelloWorldApplication extends Application {
 

@@ -2,10 +2,10 @@ package examples.etyl.procedural.color;
 
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.commons.event.PointerEvent;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.layer.BufferedLayer;
 
-import java.awt.*;
 
 public class ProceduralColorChange extends Application {
 

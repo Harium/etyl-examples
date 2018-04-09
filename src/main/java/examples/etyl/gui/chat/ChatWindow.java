@@ -4,6 +4,7 @@ import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.commons.event.Action;
 import com.harium.etyl.commons.event.GUIEvent;
 import com.harium.etyl.commons.event.KeyEvent;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.ui.Button;
 import com.harium.etyl.ui.ScrollView;
@@ -12,7 +13,6 @@ import com.harium.etyl.ui.UI;
 import com.harium.etyl.ui.label.TextLabel;
 import com.harium.etyl.ui.panel.TextPanel;
 
-import java.awt.*;
 
 public class ChatWindow extends Application {
 

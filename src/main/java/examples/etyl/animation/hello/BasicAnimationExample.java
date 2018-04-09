@@ -14,7 +14,9 @@ public class BasicAnimationExample extends Etyl {
 
 	public static void main(String[] args) {
 		BasicAnimationExample app = new BasicAnimationExample();
-		app.init();
+		//app.init();
+		System.setProperty ("java.protocol.handler.pkgs", "com.leaningtech.handlers");
+		app.init("http://localhost:8080/");
 	}
 
 	@Override

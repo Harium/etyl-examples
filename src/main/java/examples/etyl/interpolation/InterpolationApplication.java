@@ -1,10 +1,8 @@
 package examples.etyl.interpolation;
 
-import java.awt.Color;
-
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.animation.Animation;
 import com.harium.etyl.core.animation.script.HorizontalAnimation;
-import com.harium.etyl.core.animation.script.HorizontalMovementScript;
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.commons.interpolation.Interpolator;

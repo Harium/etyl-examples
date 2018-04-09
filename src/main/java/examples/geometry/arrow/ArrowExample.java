@@ -1,25 +1,25 @@
-package examples.linear.ellipse;
+package examples.geometry.arrow;
 
 import com.harium.etyl.Etyl;
 import com.harium.etyl.commons.context.Application;
-import examples.linear.ellipse.application.EllipseDrawing;
+import examples.geometry.arrow.application.ArrowApplication;
 
-public class EllipseExample extends Etyl {
+public class ArrowExample extends Etyl {
 
     private static final long serialVersionUID = 1L;
 
-    public EllipseExample() {
+    public ArrowExample() {
         super(640, 480);
     }
 
     public static void main(String[] args) {
-        EllipseExample example = new EllipseExample();
+        ArrowExample example = new ArrowExample();
         example.init();
     }
 
     @Override
     public Application startApplication() {
-        return new EllipseDrawing(w, h);
+        return new ArrowApplication(w, h);
     }
 
 }

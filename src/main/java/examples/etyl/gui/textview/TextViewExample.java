@@ -1,8 +1,7 @@
 package examples.etyl.gui.textview;
 
-import java.awt.Color;
-
 import com.harium.etyl.commons.context.Application;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.ui.UI;
 import com.harium.etyl.ui.base.BaseTextView;

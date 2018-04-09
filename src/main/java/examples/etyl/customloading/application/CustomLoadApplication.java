@@ -71,7 +71,7 @@ public class CustomLoadApplication extends Application {
 
         //Set Color to Black
         g.setColor(Color.BLACK);
-        //Write HelloWorld!
+        //Write Debug!
         g.drawString("Hello World!", xText, yText);
 
         g.drawStringX("Click with Mouse to Gain Keyboard Focus.", 250);

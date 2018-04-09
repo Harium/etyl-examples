@@ -13,9 +13,10 @@ public class HelloWorldImage extends Etyl {
 
     public static void main(String[] args) {
         HelloWorldImage app = new HelloWorldImage();
+        System.setProperty ("java.protocol.handler.pkgs", "com.leaningtech.handlers");
         app.setTitle("Hello World Example");
-        app.setIcon("particle.png");
-        app.init();
+        //app.init();
+        app.init("http://localhost:8080/");
     }
 
     @Override
@@ -23,7 +24,6 @@ public class HelloWorldImage extends Etyl {
         //This line is needed because our main class is inside /src folder
         //See the current folder with:
         //System.out.println(getPath());
-        //initialSetup("../");
 
         return new HelloWorldImageApplication(w, h);
     }

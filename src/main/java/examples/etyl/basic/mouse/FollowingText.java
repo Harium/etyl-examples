@@ -1,9 +1,8 @@
 package examples.etyl.basic.mouse;
 
-import java.awt.Color;
-
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.commons.event.PointerEvent;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.layer.TextLayer;
 
@@ -17,7 +16,6 @@ public class FollowingText extends Application{
 
 	@Override
 	public void load() {
-		
 		text.setBorder(true);
 		text.setBorderColor(Color.BLACK);
 		text.setBorderWidth(3f);

@@ -18,7 +18,7 @@ public class ParallaxExample extends Etyl {
 
     @Override
     public Application startApplication() {
-        //initialSetup("../../");
+        //initialSetup("../");
         return new ParallaxApplication(w, h);
     }
 

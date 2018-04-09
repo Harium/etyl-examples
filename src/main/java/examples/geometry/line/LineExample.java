@@ -1,8 +1,8 @@
-package examples.linear.line;
+package examples.geometry.line;
 
 import com.harium.etyl.Etyl;
 import com.harium.etyl.commons.context.Application;
-import examples.linear.line.application.ElasticLineApplication;
+import examples.geometry.line.application.ElasticLineApplication;
 
 public class LineExample extends Etyl {
 

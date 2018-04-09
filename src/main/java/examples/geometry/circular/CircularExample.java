@@ -1,25 +1,25 @@
-package examples.linear.polygonal;
+package examples.geometry.circular;
 
-import examples.linear.polygonal.application.PolygonalMultiArea;
 import com.harium.etyl.Etyl;
 import com.harium.etyl.commons.context.Application;
+import examples.geometry.circular.application.CircularApplication;
 
-public class PolygonalExample extends Etyl {
+public class CircularExample extends Etyl {
 
 	private static final long serialVersionUID = 1L;
 
-	public PolygonalExample() {
+	public CircularExample() {
 		super(640, 480);
 	}
 	
 	public static void main(String[] args){
-		PolygonalExample example = new PolygonalExample();
+		CircularExample example = new CircularExample();
 		example.init();
 	}
 	
 	@Override
 	public Application startApplication() {
-		return new PolygonalMultiArea(w,h);
+		return new CircularApplication(w,h);
 	}
 	
 }

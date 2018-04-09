@@ -2,11 +2,10 @@ package examples.etyl.gui.slider;
 
 
 import com.harium.etyl.commons.context.Application;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.ui.Slider;
 import com.harium.etyl.ui.UI;
-
-import java.awt.*;
 
 public class SliderExample extends Application {
 

@@ -57,7 +57,7 @@ public class CollisionElements extends Application implements UpdateIntervalList
 
         rectangle2.setOffsetAngle(10);
 
-        if (orangeRectangle.colideRectRect(greenRectangle)) {
+        if (orangeRectangle.colideRectRect(greenRectangle.getX(), greenRectangle.getY(), greenRectangle.getW(), greenRectangle.getH())) {
             colideGreenOrange = true;
         } else {
             colideGreenOrange = false;

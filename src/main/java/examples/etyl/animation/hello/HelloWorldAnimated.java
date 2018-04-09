@@ -16,7 +16,6 @@ public class HelloWorldAnimated extends Application {
 
 	@Override
 	public void load() {
-		
 		loadingInfo = "Loading images...";
 		
 		hello = new ImageLayer("hello.png");

@@ -71,7 +71,7 @@ public class SimpleGraphExample extends Application{
 		int radius = 12;
 		
 		g.setColor(Color.BLACK);
-		g.fillCircle(point, radius);
+		g.fillCircle(point.getX(), point.getY(), radius);
 		g.setColor(Color.WHITE);
 		
 		int x = (int)point.getX()-radius;
@@ -100,7 +100,8 @@ public class SimpleGraphExample extends Application{
 		
 		for(IntegerEdge edge: edges) {
 			
-			g.drawLine(edge.getOrigin().getPoint(), edge.getDestination().getPoint());
+			g.drawLine((int)edge.getOrigin().getPoint().getX(), (int)edge.getOrigin().getPoint().getY(),
+					(int)edge.getDestination().getPoint().getX(), (int)edge.getDestination().getPoint().getY());
 			
 			drawNode(g, edge.getDestination());
 		}

@@ -1,5 +1,6 @@
 package examples.etyl.animation.many;
 
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.animation.Animation;
 import com.harium.etyl.core.animation.script.*;
 import com.harium.etyl.core.context.SceneApplication;
@@ -7,8 +8,6 @@ import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.layer.ImageLayer;
 import com.harium.etyl.commons.layer.Layer;
 import com.harium.etyl.layer.TextLayer;
-
-import java.awt.*;
 
 
 public class ManyAnimations extends SceneApplication {

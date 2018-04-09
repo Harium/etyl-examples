@@ -1,14 +1,13 @@
-package examples.linear.line.application;
+package examples.geometry.line.application;
 
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.commons.context.UpdateIntervalListener;
 import com.harium.etyl.commons.event.MouseEvent;
 import com.harium.etyl.commons.event.PointerEvent;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
-import com.harium.etyl.linear.Point2D;
+import com.harium.etyl.geometry.Point2D;
 import com.harium.etyl.util.PointUtils;
-
-import java.awt.*;
 
 public class ElasticLineApplication extends Application implements UpdateIntervalListener {
 

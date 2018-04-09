@@ -2,10 +2,8 @@ package examples.etyl.time.timer;
 
 import com.harium.etyl.animation.timer.Timer;
 import com.harium.etyl.commons.context.Application;
+import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
-
-import java.awt.*;
-
 
 
 public class TimerApplication extends Application {
