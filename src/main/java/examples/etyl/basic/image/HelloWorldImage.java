@@ -13,10 +13,8 @@ public class HelloWorldImage extends Etyl {
 
     public static void main(String[] args) {
         HelloWorldImage app = new HelloWorldImage();
-        System.setProperty ("java.protocol.handler.pkgs", "com.leaningtech.handlers");
         app.setTitle("Hello World Example");
-        //app.init();
-        app.init("http://localhost:8080/");
+        app.init();
     }
 
     @Override
