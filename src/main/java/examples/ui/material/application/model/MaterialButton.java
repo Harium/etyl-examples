@@ -22,11 +22,11 @@ public class MaterialButton extends BaseButton {
 
         Color baseColor;
 
-        if (!disabled) {
-            if (!mouseOver) {
+        if (!isDisabled()) {
+            if (!isMouseOver()) {
                 baseColor = theme.getBaseColor();
             } else {
-                if (clicked) {
+                if (isClicked()) {
                     baseColor = theme.getActiveColor();
                 } else {
                     baseColor = theme.getSelectionColor();

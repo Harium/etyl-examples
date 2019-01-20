@@ -5,9 +5,7 @@ import com.harium.etyl.commons.event.Action;
 import com.harium.etyl.commons.event.GUIEvent;
 import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
-import com.harium.etyl.ui.Button;
 import com.harium.etyl.ui.*;
-import com.harium.etyl.ui.TextField;
 import com.harium.etyl.ui.label.TextLabel;
 
 public class GeneralGuiExample extends Application {
@@ -41,12 +39,11 @@ public class GeneralGuiExample extends Application {
         checkbox.setChecked(true);
         UI.add(checkbox);
 
-        RadioGroup group = new RadioGroup();
         RadioButton radio1 = new RadioButton(200, 50, 40, 40);
-        radio1.setGroup(group);
+        radio1.setGroup("group");
         RadioButton radio2 = new RadioButton(280, 50, 40, 40);
-        radio2.setGroup(group);
-        radio1.check();
+        radio2.setGroup("group");
+        radio1.check(true);
 
         UI.add(radio1);
         UI.add(radio2);

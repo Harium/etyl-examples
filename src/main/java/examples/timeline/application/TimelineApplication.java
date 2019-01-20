@@ -73,10 +73,10 @@ public class TimelineApplication extends Application {
         g.drawRect(timeline);
 
         //Draw cursor
-        g.setLineWidth(2f);
+        //g.setLineWidth(2f);
         g.setColor(cursorColor);
         g.drawLine(timeline.getX() + cursor, timeline.getY() + cursorPadding, timeline.getX() + cursor, timeline.getY() + timeline.getH() - cursorPadding);
-        g.setLineWidth(1f);
+        //g.setLineWidth(1f);
     }
 }
 

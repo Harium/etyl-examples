@@ -34,7 +34,7 @@ public class AlphaCollision extends Application {
     @Override
     public void update(long now) {
 
-        if (layer.colideAlphaPoint(mx, my)) {
+        if (layer.collideAlphaPoint(mx, my)) {
             layer.offsetRGB(80, -40, -50);
         } else {
             layer.resetImage();

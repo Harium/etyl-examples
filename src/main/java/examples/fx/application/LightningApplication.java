@@ -1,8 +1,8 @@
 package examples.fx.application;
 
 import com.harium.etyl.commons.context.Application;
-import com.harium.etyl.core.effect.Effect;
 import com.harium.etyl.commons.event.KeyEvent;
+import com.harium.etyl.core.effect.Effect;
 import com.harium.etyl.core.graphics.Graphics;
 
 import java.awt.*;

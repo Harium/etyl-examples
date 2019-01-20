@@ -6,23 +6,23 @@ import com.harium.etyl.layer.ImageLayer;
 
 public class HelloWorldImageApplication extends Application {
 
-	ImageLayer layer;
+    ImageLayer layer;
 
-	public HelloWorldImageApplication(int w, int h) {
-		super(w, h);
-	}
+    public HelloWorldImageApplication(int w, int h) {
+        super(w, h);
+    }
 
-	@Override
-	public void load() {
-		layer = new ImageLayer("logo.png");
-		layer.centralize(this);
+    @Override
+    public void load() {
+        layer = new ImageLayer("logo.png");
+        layer.centralize(this);
 
-		loading = 100;
-	}
+        loading = 100;
+    }
 
-	@Override
-	public void draw(Graphics g) {
-		layer.draw(g);
-	}
+    @Override
+    public void draw(Graphics g) {
+        layer.draw(g);
+    }
 
 }

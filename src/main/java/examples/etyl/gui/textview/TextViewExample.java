@@ -8,24 +8,24 @@ import com.harium.etyl.ui.base.BaseTextView;
 
 public class TextViewExample extends Application {
 
-	public TextViewExample(int w, int h){
-		super(w,h);
-	}
-		
-	@Override
-	public void load() {
-		
-		BaseTextView textView = new BaseTextView(20,30,120,40);
-		textView.setText("Hello?");
-		UI.add(textView);
-		
-		loading = 100;
-	}
+    public TextViewExample(int w, int h) {
+        super(w, h);
+    }
 
-	@Override
-	public void draw(Graphics g) {
-		g.setColor(Color.BLUE);
-		g.fillRect(this);
-	}
+    @Override
+    public void load() {
+
+        BaseTextView textView = new BaseTextView(20, 30, 120, 40);
+        textView.setText("Hello?");
+        UI.add(textView);
+
+        loading = 100;
+    }
+
+    @Override
+    public void draw(Graphics g) {
+        g.setColor(Color.BLUE);
+        g.fillRect(this);
+    }
 
 }

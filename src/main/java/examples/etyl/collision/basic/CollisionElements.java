@@ -6,9 +6,9 @@ import com.harium.etyl.commons.context.UpdateIntervalListener;
 import com.harium.etyl.commons.event.MouseEvent;
 import com.harium.etyl.commons.event.PointerEvent;
 import com.harium.etyl.commons.graphics.Color;
-import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.commons.layer.GeometricLayer;
 import com.harium.etyl.commons.layer.Layer;
+import com.harium.etyl.core.graphics.Graphics;
 
 import java.awt.geom.AffineTransform;
 
@@ -49,7 +49,7 @@ public class CollisionElements extends Application implements UpdateIntervalList
     }
 
     public void timeUpdate(long now) {
-        if (!rectangle1.colide(rectangle2)) {
+        if (!rectangle1.collide(rectangle2)) {
             color = Color.BLUE;
         } else {
             color = Color.YELLOW;
@@ -57,7 +57,7 @@ public class CollisionElements extends Application implements UpdateIntervalList
 
         rectangle2.setOffsetAngle(10);
 
-        if (orangeRectangle.colideRectRect(greenRectangle.getX(), greenRectangle.getY(), greenRectangle.getW(), greenRectangle.getH())) {
+        if (orangeRectangle.collideRectRect(greenRectangle.getX(), greenRectangle.getY(), greenRectangle.getW(), greenRectangle.getH())) {
             colideGreenOrange = true;
         } else {
             colideGreenOrange = false;

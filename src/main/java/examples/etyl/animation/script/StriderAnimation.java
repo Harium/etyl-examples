@@ -8,65 +8,65 @@ import com.harium.etyl.layer.ImageLayer;
 
 public class StriderAnimation extends Etyl {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public StriderAnimation() {
-		super(768, 417);
-	}
+    public StriderAnimation() {
+        super(768, 417);
+    }
 
-	public static void main(String[] args) {
-		StriderAnimation app = new StriderAnimation();
-		app.init();
-	}
+    public static void main(String[] args) {
+        StriderAnimation app = new StriderAnimation();
+        app.init();
+    }
 
-	@Override
-	public Application startApplication() {
-		initialSetup("");
-		
-		return new StriderAnimationApplication(w,h);
-	}
+    @Override
+    public Application startApplication() {
+        initialSetup("");
 
-	public class StriderAnimationApplication extends Application {
+        return new StriderAnimationApplication(w, h);
+    }
 
-		public StriderAnimationApplication(int w, int h) {
-			super(w, h);
-		}
+    public class StriderAnimationApplication extends Application {
 
-		private ImageLayer background;
-		private ImageLayer machine;
-		private ImageLayer anotherMachine;
+        public StriderAnimationApplication(int w, int h) {
+            super(w, h);
+        }
 
-		@Override
-		public void load() {
+        private ImageLayer background;
+        private ImageLayer machine;
+        private ImageLayer anotherMachine;
 
-			loadingInfo = "Loading images...";
+        @Override
+        public void load() {
 
-			background = new ImageLayer("scene.png");
-			machine = new ImageLayer(180, 270, "machine.png");
-			anotherMachine = new ImageLayer(180, 270, "machine.png");
+            loadingInfo = "Loading images...";
 
-			createAnimationScripts(machine, 0);
-			createAnimationScripts(anotherMachine, 180);
+            background = new ImageLayer("scene.png");
+            machine = new ImageLayer(180, 270, "machine.png");
+            anotherMachine = new ImageLayer(180, 270, "machine.png");
 
-			loading = 50;
-			loadingInfo = "Loading animations...";
+            createAnimationScripts(machine, 0);
+            createAnimationScripts(anotherMachine, 180);
 
-		}
+            loading = 50;
+            loadingInfo = "Loading animations...";
 
-		private void createAnimationScripts(ImageLayer machine, int offsetAngle) {
-			Animation.animate(machine).orbit().during(5000)
-					.around(machine.getX(), machine.getY() + 70).from(offsetAngle).to(360 + offsetAngle)
-					.loop(Animation.REPEAT_FOREVER).and()
-					.rotate(5000).from(offsetAngle).to(360 + offsetAngle)
-					.loop(Animation.REPEAT_FOREVER).start();
-		}
+        }
 
-		@Override
-		public void draw(Graphics g) {
-			background.draw(g);
-			machine.draw(g);
-			anotherMachine.draw(g);
-		}
-	}
-	
+        private void createAnimationScripts(ImageLayer machine, int offsetAngle) {
+            Animation.animate(machine).orbit().during(5000)
+                    .around(machine.getX(), machine.getY() + 70).from(offsetAngle).to(360 + offsetAngle)
+                    .loop(Animation.REPEAT_FOREVER).and()
+                    .rotate(5000).from(offsetAngle).to(360 + offsetAngle)
+                    .loop(Animation.REPEAT_FOREVER).start();
+        }
+
+        @Override
+        public void draw(Graphics g) {
+            background.draw(g);
+            machine.draw(g);
+            anotherMachine.draw(g);
+        }
+    }
+
 }

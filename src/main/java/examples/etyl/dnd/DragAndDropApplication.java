@@ -27,9 +27,9 @@ public class DragAndDropApplication extends Application {
         if (dragAction) {
             int width = 4;
             g.setColor(Color.AQUA);
-            g.setLineWidth(width);
+            //g.setLineWidth(width);
             g.drawRect(x + width, y + width, w - width * 2, h - width * 2);
-            g.setLineWidth(1f);
+            //g.setLineWidth(1f);
         }
 
         if (!paths.isEmpty()) {

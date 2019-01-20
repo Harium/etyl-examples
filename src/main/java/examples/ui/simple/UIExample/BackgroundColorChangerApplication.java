@@ -5,8 +5,8 @@ import com.harium.etyl.commons.event.Action;
 import com.harium.etyl.commons.event.GUIEvent;
 import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
-import com.harium.etyl.ui.UI;
 import com.harium.etyl.ui.Button;
+import com.harium.etyl.ui.UI;
 import com.harium.etyl.ui.label.TextLabel;
 
 public class BackgroundColorChangerApplication extends Application {
@@ -22,7 +22,6 @@ public class BackgroundColorChangerApplication extends Application {
 
     @Override
     public void load() {
-
         Button buttonWhite = new Button(20, 30, 120, 40);
         buttonWhite.setLabel(new TextLabel("WHITE!"));
         buttonWhite.addAction(GUIEvent.MOUSE_LEFT_BUTTON_UP, new Action(this, "changeColor", Color.GHOST_WHITE));
@@ -62,10 +61,8 @@ public class BackgroundColorChangerApplication extends Application {
 
     @Override
     public void draw(Graphics g) {
-
         g.setColor(color);
         g.fillRect(x, y, w, h);
-
     }
 
 }

@@ -20,11 +20,6 @@ public class HelloWorld extends Etyl {
 
     @Override
     public Application startApplication() {
-        //This line is needed because our main class is inside /src folder
-        //See the current folder with:
-        //System.out.println(getPath());
-        //initialSetup("../");
-
         return new HelloWorldApplication(w, h);
     }
 

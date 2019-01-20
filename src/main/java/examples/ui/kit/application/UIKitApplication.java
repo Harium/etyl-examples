@@ -2,9 +2,9 @@ package examples.ui.kit.application;
 
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.core.graphics.Graphics;
-import com.harium.etyl.ui.UI;
 import com.harium.etyl.ui.Button;
 import com.harium.etyl.ui.Slider;
+import com.harium.etyl.ui.UI;
 import com.harium.etyl.ui.label.TextLabel;
 
 public class UIKitApplication extends Application {

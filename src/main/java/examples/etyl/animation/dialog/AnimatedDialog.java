@@ -1,10 +1,10 @@
 package examples.etyl.animation.dialog;
 
 import com.harium.etyl.animation.script.text.DialogScript;
-import com.harium.etyl.core.animation.Animation;
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.commons.event.MouseEvent;
 import com.harium.etyl.commons.event.PointerEvent;
+import com.harium.etyl.core.animation.Animation;
 import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.layer.TextLayer;
 

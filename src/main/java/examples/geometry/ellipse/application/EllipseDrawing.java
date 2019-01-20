@@ -2,7 +2,7 @@ package examples.geometry.ellipse.application;
 
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.core.graphics.Graphics;
-import com.harium.etyl.linear.Ellipse;
+import com.harium.etyl.geometry.Ellipse;
 
 import java.awt.*;
 
@@ -23,7 +23,7 @@ public class EllipseDrawing extends Application {
 
         for (int j = 0; j < h; j++) {
             for (int i = 0; i < w; i++) {
-                if (ellipse.colideEllipsePoint(i, j)) {
+                if (ellipse.collidePoint(i, j)) {
                     mask[j][i] = true;
                 }
             }

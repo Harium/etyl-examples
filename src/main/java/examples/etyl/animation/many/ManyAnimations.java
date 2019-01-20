@@ -1,12 +1,12 @@
 package examples.etyl.animation.many;
 
 import com.harium.etyl.commons.graphics.Color;
+import com.harium.etyl.commons.layer.Layer;
 import com.harium.etyl.core.animation.Animation;
 import com.harium.etyl.core.animation.script.*;
 import com.harium.etyl.core.context.SceneApplication;
 import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.layer.ImageLayer;
-import com.harium.etyl.commons.layer.Layer;
 import com.harium.etyl.layer.TextLayer;
 
 
@@ -40,19 +40,19 @@ public class ManyAnimations extends SceneApplication {
         bouncingText.setBorderColor(Color.BLACK);
         bouncingText.setBorderWidth(3f);
 
-        HorizontalMovementScript hscript = new HorizontalMovementScript(bouncingText, 10000);
+        HorizontalAnimation hscript = new HorizontalAnimation(bouncingText, 10000);
         hscript.setInterval(400, 10);
 
-        HorizontalMovementScript invscript = new HorizontalMovementScript(bouncingText, 10000);
+        HorizontalAnimation invscript = new HorizontalAnimation(bouncingText, 10000);
         invscript.setInterval(10, 400);
         //After the hscript, execute invscript
         invscript.addNext(hscript);
         hscript.addNext(invscript);
 
-        VerticalMovementScript vscript = new VerticalMovementScript(bouncingText, 600);
+        VerticalAnimation vscript = new VerticalAnimation(bouncingText, 600);
         vscript.setInterval(100, 200);
 
-        VerticalMovementScript invVscript = new VerticalMovementScript(600);
+        VerticalAnimation invVscript = new VerticalAnimation(600);
         invVscript.setTarget(bouncingText);
         invVscript.setInterval(200, 100);
         invscript.addNext(vscript);
@@ -83,7 +83,7 @@ public class ManyAnimations extends SceneApplication {
         orbit.setInterval(0, 1080);
         orbit.around(cx, cy);
 
-        orbit.setRepeat(Animation.REPEAT_FOREVER);
+        orbit.loop(Animation.REPEAT_FOREVER);
 
         this.scene.addAnimation(orbit);
 

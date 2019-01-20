@@ -9,40 +9,40 @@ import com.harium.etyl.core.graphics.Graphics;
 
 public class PathBall extends Application {
 
-	public PathBall(int w, int h) {
-		super(w, h);
-	}
+    public PathBall(int w, int h) {
+        super(w, h);
+    }
 
-	private Layer ball;
+    private Layer ball;
 
-	@Override
-	public void load() {
-		
-		loading = 10;
+    @Override
+    public void load() {
 
-		ball = new Layer(400, 200, 30, 30);
-	
-		int duration = 2000;
+        loading = 10;
 
-		Animation.animate(ball).interpolate(Interpolator.LINEAR)
-				.move(duration).from(40, 80).to(280, 280).then()
-				.move(duration).to(300, 180).then()
-				.move(duration).to(100, 280).then()
-				.move(duration).to(40, 80).start();
+        ball = new Layer(400, 200, 30, 30);
 
-		loading = 100;
-	}
-	
-	@Override
-	public void draw(Graphics g) {
-		drawBall(g, ball);
-	}
+        int duration = 2000;
 
-	protected void drawBall(Graphics g, Layer ball) {
-		g.setColor(Color.RED);
-		g.fillOval(ball.getX(), ball.getY(), ball.getW(), ball.getH());
-		g.setColor(Color.BLACK);
-		g.drawOval(ball.getX(), ball.getY(), ball.getW(), ball.getH());
-	}
+        Animation.animate(ball).interpolate(Interpolator.LINEAR)
+                .move(duration).from(40, 80).to(280, 280).then()
+                .move(duration).to(300, 180).then()
+                .move(duration).to(100, 280).then()
+                .move(duration).to(40, 80).start();
+
+        loading = 100;
+    }
+
+    @Override
+    public void draw(Graphics g) {
+        drawBall(g, ball);
+    }
+
+    protected void drawBall(Graphics g, Layer ball) {
+        g.setColor(Color.RED);
+        g.fillOval(ball.getX(), ball.getY(), ball.getW(), ball.getH());
+        g.setColor(Color.BLACK);
+        g.drawOval(ball.getX(), ball.getY(), ball.getW(), ball.getH());
+    }
 
 }

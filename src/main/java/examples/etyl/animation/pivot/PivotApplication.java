@@ -1,7 +1,5 @@
 package examples.etyl.animation.pivot;
 
-import java.util.Set;
-
 import com.harium.etyl.animation.pivot.Part;
 import com.harium.etyl.commons.context.Application;
 import com.harium.etyl.commons.event.KeyEvent;
@@ -10,201 +8,203 @@ import com.harium.etyl.commons.graphics.Color;
 import com.harium.etyl.core.graphics.Graphics;
 import com.harium.etyl.geometry.Point2D;
 
+import java.util.Set;
+
 public class PivotApplication extends Application {
 
-	public PivotApplication(int w, int h) {
-		super(w, h);
-	}
+    public PivotApplication(int w, int h) {
+        super(w, h);
+    }
 
-	private Part root;
-	private Part head;
-	private Part arm;
-	private Part torso;
+    private Part root;
+    private Part head;
+    private Part arm;
+    private Part torso;
 
-	private double angle = 0;
+    private double angle = 0;
 
-	@Override
-	public void load() {
+    @Override
+    public void load() {
 
-		loading = 10;
+        loading = 10;
 
-		createChar();
-		root = head;
+        createChar();
+        root = head;
 
-		//Transformations
-		head.moveTo(300, 260);
-		torso.rotate(10);
-		
-		loading = 100;
-	}
+        //Transformations
+        head.moveTo(300, 260);
+        torso.rotate(10);
 
-	@Override
-	public void draw(Graphics g) {
-		drawPart(g, root);
-	}
+        loading = 100;
+    }
 
-	@Override
-	public void update(long now) {
-		angle--;
-		torso.rotate(angle);
-	}
+    @Override
+    public void draw(Graphics g) {
+        drawPart(g, root);
+    }
 
-	@Override
-	public void updateMouse(PointerEvent event) {
+    @Override
+    public void update(long now) {
+        angle--;
+        torso.rotate(angle);
+    }
 
-		if(event.isClicked()) {
-			System.out.println("x: "+event.getX());
-			System.out.println("y: "+event.getY());
-		}
-	}
+    @Override
+    public void updateMouse(PointerEvent event) {
 
-	@Override
-	public void updateKeyboard(KeyEvent event) {
-		
-	}	
+        if (event.isClicked()) {
+            System.out.println("x: " + event.getX());
+            System.out.println("y: " + event.getY());
+        }
+    }
 
-	public void drawPart(Graphics g, Part part) {
-		part.draw(g);
-		drawPoints(g, part);
+    @Override
+    public void updateKeyboard(KeyEvent event) {
 
-		for(Set<Part> ps : part.getParts()) {
-			for(Part subPart : ps) {
-				drawPart(g, subPart);
-			}
-		}
-	}
+    }
 
-	public void drawPoints(Graphics g, Part part) {
-		for(Point2D point: part.getPoints()) {
-			g.setColor(Color.BLACK);
-			g.fillCircle(part.getX()+point.getX(), part.getY()+point.getY(), 5);
-		}
-	}
+    public void drawPart(Graphics g, Part part) {
+        part.draw(g);
+        drawPoints(g, part);
 
-	private void createChar() {
-		head = new Part(100,60, "parts/head.png");
-		head.setAnchor(head.getW()/2, 5);
+        for (Set<Part> ps : part.getParts()) {
+            for (Part subPart : ps) {
+                drawPart(g, subPart);
+            }
+        }
+    }
 
-		Point2D neck = new Point2D(16,30);
-		head.addPoint(neck);		
+    public void drawPoints(Graphics g, Part part) {
+        for (Point2D point : part.getPoints()) {
+            g.setColor(Color.BLACK);
+            g.fillCircle(part.getX() + point.getX(), part.getY() + point.getY(), 5);
+        }
+    }
 
-		torso = new Part(200,60, "parts/torso.png");
-		torso.setAnchor(torso.getW()/2, 1);
+    private void createChar() {
+        head = new Part(100, 60, "parts/head.png");
+        head.setAnchor(head.getW() / 2, 5);
 
-		head.attach(neck, torso);
+        Point2D neck = new Point2D(16, 30);
+        head.addPoint(neck);
 
-		//Torso joints
-		Point2D leftShoulder = new Point2D(5, 10);
-		torso.addPoint(leftShoulder);
+        torso = new Part(200, 60, "parts/torso.png");
+        torso.setAnchor(torso.getW() / 2, 1);
 
-		Point2D rightShoulder = new Point2D(39, 11);
-		torso.addPoint(rightShoulder);
+        head.attach(neck, torso);
 
-		Point2D waist = new Point2D(20, 52);
-		torso.addPoint(waist);
+        //Torso joints
+        Point2D leftShoulder = new Point2D(5, 10);
+        torso.addPoint(leftShoulder);
 
-		Part armLeft = new Part("parts/larm.png");
-		armLeft.setAnchor(15,7);
-		Point2D elbowLeft = new Point2D(10,32);
-		armLeft.addPoint(elbowLeft);
-		
-		torso.attach(leftShoulder, armLeft);
+        Point2D rightShoulder = new Point2D(39, 11);
+        torso.addPoint(rightShoulder);
 
-		//Left ForeArm
-		Part foreArmLeft = new Part("parts/lforearm.png");
-		foreArmLeft.setAnchor(6, 20);
-		armLeft.attach(elbowLeft, foreArmLeft);
+        Point2D waist = new Point2D(20, 52);
+        torso.addPoint(waist);
 
-		Point2D fistLeft = new Point2D(20,5);
-		foreArmLeft.addPoint(fistLeft);
+        Part armLeft = new Part("parts/larm.png");
+        armLeft.setAnchor(15, 7);
+        Point2D elbowLeft = new Point2D(10, 32);
+        armLeft.addPoint(elbowLeft);
 
-		//Left Hand
-		Part handLeft = new Part("parts/lhand.png");
-		handLeft.setAnchor(2,18);
-		foreArmLeft.attach(fistLeft, handLeft);
+        torso.attach(leftShoulder, armLeft);
 
-		//Right Arm
-		Part armRight = new Part("parts/rarm.png");
-		armRight.setAnchor(3, 7);
+        //Left ForeArm
+        Part foreArmLeft = new Part("parts/lforearm.png");
+        foreArmLeft.setAnchor(6, 20);
+        armLeft.attach(elbowLeft, foreArmLeft);
 
-		Point2D elbowRight = new Point2D(14,36);
-		armRight.addPoint(elbowRight);
+        Point2D fistLeft = new Point2D(20, 5);
+        foreArmLeft.addPoint(fistLeft);
 
-		torso.attach(rightShoulder, armRight);
+        //Left Hand
+        Part handLeft = new Part("parts/lhand.png");
+        handLeft.setAnchor(2, 18);
+        foreArmLeft.attach(fistLeft, handLeft);
 
-		//Right Forearm
-		Part foreArmRight = new Part("parts/rforearm.png");
-		foreArmRight.setAnchor(7, 25);
+        //Right Arm
+        Part armRight = new Part("parts/rarm.png");
+        armRight.setAnchor(3, 7);
 
-		Point2D fistRight = new Point2D(14,7);
-		foreArmRight.addPoint(fistRight);
+        Point2D elbowRight = new Point2D(14, 36);
+        armRight.addPoint(elbowRight);
 
-		armRight.attach(elbowRight, foreArmRight);
+        torso.attach(rightShoulder, armRight);
 
-		//Right Hand
-		Part handRight = new Part("parts/rhand.png");
-		handRight.setAnchor(8,22);
-		foreArmRight.attach(fistRight, handRight);
+        //Right Forearm
+        Part foreArmRight = new Part("parts/rforearm.png");
+        foreArmRight.setAnchor(7, 25);
 
-		//Hip
-		Part pelvis = new Part("parts/hip.png");
-		pelvis.setAnchor(19,5);
+        Point2D fistRight = new Point2D(14, 7);
+        foreArmRight.addPoint(fistRight);
 
-		Point2D hipLeft = new Point2D(9,13);
-		pelvis.addPoint(hipLeft);
-		Point2D hipRight = new Point2D(27,13);
-		pelvis.addPoint(hipRight);
+        armRight.attach(elbowRight, foreArmRight);
 
-		torso.attach(waist, pelvis);
+        //Right Hand
+        Part handRight = new Part("parts/rhand.png");
+        handRight.setAnchor(8, 22);
+        foreArmRight.attach(fistRight, handRight);
 
-		//Left Thigh
-		Part thighLeft = new Part("parts/lthigh.png");
-		thighLeft.setAnchor(10,7);
+        //Hip
+        Part pelvis = new Part("parts/hip.png");
+        pelvis.setAnchor(19, 5);
 
-		Point2D kneeLeft = new Point2D(14,51);
-		thighLeft.addPoint(kneeLeft);
+        Point2D hipLeft = new Point2D(9, 13);
+        pelvis.addPoint(hipLeft);
+        Point2D hipRight = new Point2D(27, 13);
+        pelvis.addPoint(hipRight);
 
-		pelvis.attach(pelvis.getPoints().get(1), thighLeft);
+        torso.attach(waist, pelvis);
 
-		//Left Leg
-		Part legLeft = new Part("parts/lleg.png");
-		legLeft.setAnchor(16, 6);
+        //Left Thigh
+        Part thighLeft = new Part("parts/lthigh.png");
+        thighLeft.setAnchor(10, 7);
 
-		Point2D ankleLeft = new Point2D(7,43);
-		legLeft.addPoint(ankleLeft);
+        Point2D kneeLeft = new Point2D(14, 51);
+        thighLeft.addPoint(kneeLeft);
 
-		//thighLeft.getPoints().get(0).addPart(legLeft);
-		thighLeft.attach(kneeLeft, legLeft);
+        pelvis.attach(pelvis.getPoints().get(1), thighLeft);
 
-		//Left Foot
-		Part footLeft = new Part("parts/lfoot.png");
-		footLeft.setAnchor(12,4);
+        //Left Leg
+        Part legLeft = new Part("parts/lleg.png");
+        legLeft.setAnchor(16, 6);
 
-		legLeft.attach(ankleLeft, footLeft);
+        Point2D ankleLeft = new Point2D(7, 43);
+        legLeft.addPoint(ankleLeft);
 
-		//Right Thigh
-		Part thighRight = new Part("parts/rthigh.png");
-		thighRight.setAnchor(10,4);
+        //thighLeft.getPoints().get(0).addPart(legLeft);
+        thighLeft.attach(kneeLeft, legLeft);
 
-		Point2D kneeRight = new Point2D(17,45);
-		thighRight.addPoint(kneeRight);
+        //Left Foot
+        Part footLeft = new Part("parts/lfoot.png");
+        footLeft.setAnchor(12, 4);
 
-		pelvis.attach(hipRight, thighRight);
+        legLeft.attach(ankleLeft, footLeft);
 
-		//Right Leg
-		Part legRight = new Part("parts/rleg.png");
-		legRight.setAnchor(10,4);
-		thighRight.attach(kneeRight, legRight);
-		
-		Point2D ankleRight = new Point2D(11,41);
-		legRight.addPoint(ankleRight);
-		
-		//Right Foot
-		Part footRight = new Part("parts/rfoot.png");
-		footRight.setAnchor(10,4);
-		legRight.attach(ankleRight, footRight);
-		
-		arm = armLeft;
-	}
+        //Right Thigh
+        Part thighRight = new Part("parts/rthigh.png");
+        thighRight.setAnchor(10, 4);
+
+        Point2D kneeRight = new Point2D(17, 45);
+        thighRight.addPoint(kneeRight);
+
+        pelvis.attach(hipRight, thighRight);
+
+        //Right Leg
+        Part legRight = new Part("parts/rleg.png");
+        legRight.setAnchor(10, 4);
+        thighRight.attach(kneeRight, legRight);
+
+        Point2D ankleRight = new Point2D(11, 41);
+        legRight.addPoint(ankleRight);
+
+        //Right Foot
+        Part footRight = new Part("parts/rfoot.png");
+        footRight.setAnchor(10, 4);
+        legRight.attach(ankleRight, footRight);
+
+        arm = armLeft;
+    }
 
 }

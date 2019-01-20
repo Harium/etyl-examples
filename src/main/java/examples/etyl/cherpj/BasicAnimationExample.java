@@ -1,7 +1,8 @@
-package examples.etyl.animation.hello;
+package examples.etyl.cherpj;
 
 import com.harium.etyl.Etyl;
 import com.harium.etyl.commons.context.Application;
+import examples.etyl.basic.hello.HelloWorldApplication;
 
 
 public class BasicAnimationExample extends Etyl {
@@ -14,12 +15,13 @@ public class BasicAnimationExample extends Etyl {
 
     public static void main(String[] args) {
         BasicAnimationExample app = new BasicAnimationExample();
-        app.init();
+        System.setProperty("java.protocol.handler.pkgs", "com.leaningtech.handlers");
+        app.init("http://localhost:8080/");
     }
 
     @Override
     public Application startApplication() {
-        return new HelloWorldAnimated(w, h);
+        return new HelloWorldApplication(w, h);
     }
 
 }

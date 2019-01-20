@@ -3,12 +3,13 @@ package examples.ui.material.application.model;
 
 import com.harium.etyl.commons.event.PointerEvent;
 import com.harium.etyl.core.graphics.Graphics;
-import com.harium.etyl.ui.base.BaseSlider;
+import com.harium.etyl.ui.base.BaseSliderKnobButton;
 import com.harium.etyl.ui.theme.Theme;
 
-public class MaterialSlider extends BaseSlider {
+public class MaterialSlider extends BaseSliderKnobButton {
 
     int barSize = 4;
+    MaterialSliderButton button;
 
     public MaterialSlider(int x, int y, int w, int h) {
         super(x, y, w, h);
@@ -54,7 +55,7 @@ public class MaterialSlider extends BaseSlider {
             if (activated) {
                 size = h;
             }
-            g.setLineWidth(barSize);
+            //g.setLineWidth(barSize);
             g.drawCircle(x, y + h / 2, size / 2);
         } else {
             button.draw(g);

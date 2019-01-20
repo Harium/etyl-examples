@@ -3,7 +3,6 @@ package examples.etyl.gui;
 import com.harium.etyl.Etyl;
 import com.harium.etyl.commons.context.Application;
 import examples.etyl.gui.list.TableView;
-import examples.etyl.gui.textview.TextViewExample;
 
 
 public class GuiExamples extends Etyl {
